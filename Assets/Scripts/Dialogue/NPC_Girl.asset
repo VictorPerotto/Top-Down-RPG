@@ -22,3 +22,9 @@ MonoBehaviour:
       portuguese: Ola, tudo bem?
       english: 
       spanish: 
+  - actorName: Heroi
+    profile: {fileID: 0}
+    sentence:
+      portuguese: Ola, amigo
+      english: 
+      spanish: 

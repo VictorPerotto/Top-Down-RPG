@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,14 +10,22 @@ public class DialogueControl : MonoBehaviour
     [Header("Components")]
     public GameObject dialogueObj;
     public Image profileSprite;
-    public Text speechText;
-    public Text actorNameText;
+    public TextMeshProUGUI speechText;
+    public TextMeshProUGUI actorNameText;
 
     [Header("Settings")]
     public float typeSpeed;
     private bool isShowing;
     private int index;
     private string[] sentences;
+
+    public static DialogueControl instance;
+
+    //chamado antes de todos os métodos Start()
+    void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
