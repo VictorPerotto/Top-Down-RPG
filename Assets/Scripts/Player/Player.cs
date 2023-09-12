@@ -7,13 +7,18 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float runSpeed;
 
-    private float initialSpeed;
     private Rigidbody2D rb;
+
+    private int handlingObject;
+
     private Vector2 direction;
+    private float initialSpeed;
     private bool isRunning;
     private bool isRolling;
     private bool isCutting;
+    private bool isDigging;
 
+    public bool IsDigging {get => isDigging; set => isDigging = value;}
     public bool IsCutting {get => isCutting; set => isCutting = value;}
     public bool IsRunning {get => isRunning; set => isRunning = value;}
     public bool IsRolling {get => isRolling; set => isRolling = value;}
@@ -27,10 +32,21 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            handlingObject = 1;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            handlingObject = 2;
+        }
+
         OnInput();
         OnRun();
         OnRolling();
         OnCutting();
+        OnDig();
     }
 
     private void FixedUpdate()
@@ -79,22 +95,42 @@ public class Player : MonoBehaviour
             //speed = initialSpeed;
         }
     }
-    
+
     void OnCutting()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(handlingObject == 1)
         {
-            isCutting = true; 
-            speed = 0;
-        }
+            if(Input.GetMouseButtonDown(0))
+            {
+                isCutting = true; 
+                speed = 0;
+            }
 
-        if(Input.GetMouseButtonUp(0))
-        {
-            isCutting = false; 
-            speed = initialSpeed;
+            if(Input.GetMouseButtonUp(0))
+            {
+                isCutting = false; 
+                speed = initialSpeed;
+            }
         }
     }
 
+    void OnDig()
+    {
+        if(handlingObject == 2)
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                isDigging = true; 
+                speed = 0;
+            }
+
+            if(Input.GetMouseButtonUp(0))
+            {
+                isDigging = false; 
+                speed = initialSpeed;
+            }
+        }  
+    }
 
     #endregion
 }
