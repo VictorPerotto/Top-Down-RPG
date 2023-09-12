@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class PlayerAnim : MonoBehaviour
@@ -18,7 +19,6 @@ public class PlayerAnim : MonoBehaviour
     void Update()
     {
         OnMove();
-        OnRun();
     }
 
     #region Movement
@@ -32,7 +32,7 @@ public class PlayerAnim : MonoBehaviour
                 anim.SetTrigger("isRoll");
             }
 
-            else
+           else
             {
                 anim.SetInteger("transition", 1);
             } 
@@ -52,16 +52,16 @@ public class PlayerAnim : MonoBehaviour
         {
             transform.eulerAngles = new Vector2(0,180);
         }
-    }
 
-    void OnRun()
-    {
         if(player.IsRunning)
         {
             anim.SetInteger("transition", 2);
         }
+
+        if(player.IsCutting)
+        {
+            anim.SetInteger("transition", 3);
+        }
     }
-
-
     #endregion
 }

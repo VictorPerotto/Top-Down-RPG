@@ -7,6 +7,16 @@ using UnityEngine.UI;
 
 public class DialogueControl : MonoBehaviour
 {
+    [System.Serializable]
+    public enum idioma
+    {
+        pt,
+        eng,
+        spa
+    }
+
+    public idioma language;
+
     [Header("Components")]
     public GameObject dialogueObj;
     public Image profileSprite;
@@ -21,6 +31,7 @@ public class DialogueControl : MonoBehaviour
 
     public static DialogueControl instance;
 
+    public bool IsShowing {get => isShowing; set => isShowing = value;}
     //chamado antes de todos os métodos Start()
     void Awake()
     {
@@ -52,7 +63,24 @@ public class DialogueControl : MonoBehaviour
     //pula para a proxima frase
     public void NextSentence()
     {
+        if(speechText.text == sentences[index]) //se a frase completa esta sendo exibida
+        {
+            if(index < sentences.Length - 1) //se ainda tem frases para o npc falar
+            {
+                index ++;
+                speechText.text = "";
+                StartCoroutine(TypeSentence());
+            }
 
+            else //acabaram as frases
+            {
+                speechText.text = "";
+                index = 0;
+                dialogueObj.SetActive(false);
+                sentences = null;
+                isShowing = false;
+            }
+        }
     }
 
     //chama a fala do npc

@@ -50,7 +50,20 @@ public class NPCDialogue : MonoBehaviour
     {
         for(int i = 0; i < dialogue.dialogues.Count; i++)
         {
-            sentences.Add(dialogue.dialogues[i].sentence.portuguese);
+            switch(DialogueControl.instance.language)
+            {
+                case DialogueControl.idioma.pt:
+                    sentences.Add(dialogue.dialogues[i].sentence.portuguese);
+                break;
+
+                case DialogueControl.idioma.eng:
+                    sentences.Add(dialogue.dialogues[i].sentence.english);
+                break;
+
+                case DialogueControl.idioma.spa:
+                    sentences.Add(dialogue.dialogues[i].sentence.spanish);
+                break;
+            }
         }
     }
 

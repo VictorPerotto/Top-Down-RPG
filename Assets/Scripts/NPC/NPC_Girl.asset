@@ -20,11 +20,11 @@ MonoBehaviour:
     profile: {fileID: 0}
     sentence:
       portuguese: Ola, tudo bem?
-      english: 
-      spanish: 
+      english: Hello, how are you?
+      spanish: Holla, que tal?
   - actorName: Heroi
     profile: {fileID: 0}
     sentence:
-      portuguese: Ola, amigo
-      english: 
-      spanish: 
+      portuguese: "Ola, tudo bem e voc\xEA?"
+      english: Hi, im fine, and you?
+      spanish: Holla, bien e usted?
