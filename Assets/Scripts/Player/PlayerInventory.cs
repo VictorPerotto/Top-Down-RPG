@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {   
-    [SerializeField] private float woods;
+    [SerializeField] private int currentWoods;
+    [SerializeField] private float currentWater;
 
-    public float Woods {get => woods; set => woods = value;}
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int CurrentWoods {get => currentWoods; set => currentWoods = value;}
+    public float CurrentWater {get => currentWater; set => currentWater = value;}
 
-    // Update is called once per frame
-    void Update()
+    
+    [SerializeField] private float maxWater;
+
+    public void AddWater(float water)
     {
-        
+        if(currentWater < maxWater)
+        {
+            currentWater += water;
+        }
     }
 }

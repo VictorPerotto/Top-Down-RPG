@@ -31,7 +31,7 @@ public class Wood : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerInventory>().Woods ++;
+            other.GetComponent<PlayerInventory>().CurrentWoods ++;
             Destroy(gameObject);
         }
     }

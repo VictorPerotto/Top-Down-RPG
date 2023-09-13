@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float runSpeed;
 
     private Rigidbody2D rb;
+    private PlayerInventory playerInventory;
 
     private int handlingObject;
 
@@ -17,15 +18,18 @@ public class Player : MonoBehaviour
     private bool isRolling;
     private bool isCutting;
     private bool isDigging;
+    private bool isWatering;
 
     public bool IsDigging {get => isDigging; set => isDigging = value;}
     public bool IsCutting {get => isCutting; set => isCutting = value;}
     public bool IsRunning {get => isRunning; set => isRunning = value;}
     public bool IsRolling {get => isRolling; set => isRolling = value;}
+    public bool IsWatering {get => isWatering; set => isWatering = value;}
     public Vector2 Direction {get => direction; set => direction = value;}
 
     private void Start()
     {
+        playerInventory = GetComponent<PlayerInventory>();
         rb = GetComponent<Rigidbody2D>();    
         initialSpeed = speed;
     }
@@ -34,10 +38,15 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            handlingObject = 1;
+            handlingObject = 0;
         }
 
         if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            handlingObject = 1;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha3))
         {
             handlingObject = 2;
         }
@@ -47,6 +56,7 @@ public class Player : MonoBehaviour
         OnRolling();
         OnCutting();
         OnDig();
+        OnWatering();
     }
 
     private void FixedUpdate()
@@ -95,10 +105,13 @@ public class Player : MonoBehaviour
             //speed = initialSpeed;
         }
     }
+    #endregion
+
+    #region Actions
 
     void OnCutting()
     {
-        if(handlingObject == 1)
+        if(handlingObject == 0)
         {
             if(Input.GetMouseButtonDown(0))
             {
@@ -116,7 +129,7 @@ public class Player : MonoBehaviour
 
     void OnDig()
     {
-        if(handlingObject == 2)
+        if(handlingObject == 1)
         {
             if(Input.GetMouseButtonDown(0))
             {
@@ -128,6 +141,29 @@ public class Player : MonoBehaviour
             {
                 isDigging = false; 
                 speed = initialSpeed;
+            }
+        }  
+    }
+
+    void OnWatering()
+    {
+        if(handlingObject == 2)
+        {
+            if(Input.GetMouseButtonDown(0)  && playerInventory.CurrentWater > 0)
+            {
+                isWatering = true; 
+                speed = 0;
+            }
+
+            if(Input.GetMouseButtonUp(0) || playerInventory.CurrentWater <= 0)
+            {
+                isWatering = false; 
+                speed = initialSpeed;
+            }
+
+            if(isWatering)
+            {
+                playerInventory.CurrentWater -= 1 * Time.deltaTime;
             }
         }  
     }

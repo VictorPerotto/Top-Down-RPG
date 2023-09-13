@@ -67,6 +67,11 @@ public class PlayerAnim : MonoBehaviour
         {
             anim.SetInteger("transition", 4);
         }
+
+        if(player.IsWatering)
+        {
+            anim.SetInteger("transition", 5);
+        }
     }
     #endregion
 }
