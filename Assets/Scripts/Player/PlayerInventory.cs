@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {   
     [SerializeField] private int currentWoods;
+    [SerializeField] private int currentCarrots;
     [SerializeField] private float currentWater;
 
     public int CurrentWoods {get => currentWoods; set => currentWoods = value;}
+    public int CurrentCarrots {get => currentCarrots; set => currentCarrots = value;}
     public float CurrentWater {get => currentWater; set => currentWater = value;}
 
     

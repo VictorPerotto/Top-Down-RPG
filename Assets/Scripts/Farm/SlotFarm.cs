@@ -15,34 +15,49 @@ public class SlotFarm : MonoBehaviour
     [SerializeField] private float waterAmount; //quantidade de agua necessaria para plantar
     [SerializeField] private float waterMultiplier;
     private float currentWater;
-    private int initialDigAmount;
+    private int currentDig;
+    private bool hasHole;
+
+    private PlayerInventory playerInventory;
 
     void Start()
     {
-        initialDigAmount = digAmount;
+        playerInventory = FindObjectOfType<PlayerInventory>();
     }
 
     void Update()
     {
-        if(detecting)
+        if(hasHole)
         {
-            currentWater += waterMultiplier * Time.deltaTime;
-        }
+            if(detecting)
+            {
+                currentWater += waterMultiplier * Time.deltaTime;
+            }
 
-        if(currentWater >= waterAmount)
-        {
-            spriteRenderer.sprite = carrot;
+            if(currentWater >= waterAmount)
+            {
+                spriteRenderer.sprite = carrot;
+
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    spriteRenderer.sprite = hole;
+                    playerInventory.CurrentCarrots ++;
+                    currentWater = 0;
+                }
+            }
         }
+        
     }
 
     public void OnHit()
     {
-        digAmount --;
+        currentDig ++;
 
-        if(digAmount <= initialDigAmount / 2)
+        if(currentDig >= digAmount)
         {
             //cavar o buraco
             spriteRenderer.sprite = hole;
+            hasHole = true;
         }
     }
 
