@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     public bool IsRolling {get => isRolling; set => isRolling = value;}
     public bool IsWatering {get => isWatering; set => isWatering = value;}
     public Vector2 Direction {get => direction; set => direction = value;}
+    public int HandlingObject { get => handlingObject; set => handlingObject = value; }
 
     private void Start()
     {
@@ -39,16 +40,19 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             handlingObject = 0;
+            HUDController.instance.ChangeTool();
         }
 
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
             handlingObject = 1;
+            HUDController.instance.ChangeTool();
         }
 
         if(Input.GetKeyDown(KeyCode.Alpha3))
         {
             handlingObject = 2;
+            HUDController.instance.ChangeTool();
         }
 
         OnInput();
