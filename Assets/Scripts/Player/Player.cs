@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
 
     private Vector2 direction;
     private float initialSpeed;
+    private bool isPaused;
     private bool isRunning;
     private bool isRolling;
     private bool isCutting;
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     public bool IsRunning {get => isRunning; set => isRunning = value;}
     public bool IsRolling {get => isRolling; set => isRolling = value;}
     public bool IsWatering {get => isWatering; set => isWatering = value;}
+    public bool IsPaused {get => isPaused; set => isPaused = value;}
     public Vector2 Direction {get => direction; set => direction = value;}
     public int HandlingObject { get => handlingObject; set => handlingObject = value; }
 
@@ -37,35 +39,41 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if(!isPaused)
         {
-            handlingObject = 0;
-            HUDController.instance.ChangeTool();
-        }
+            if(Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                handlingObject = 0;
+                HUDController.instance.ChangeTool();
+            }
 
-        if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            handlingObject = 1;
-            HUDController.instance.ChangeTool();
-        }
+            if(Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                handlingObject = 1;
+                HUDController.instance.ChangeTool();
+            }
 
-        if(Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            handlingObject = 2;
-            HUDController.instance.ChangeTool();
-        }
+            if(Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                handlingObject = 2;
+                HUDController.instance.ChangeTool();
+            }
 
-        OnInput();
-        OnRun();
-        OnRolling();
-        OnCutting();
-        OnDig();
-        OnWatering();
+            OnInput();
+            OnRun();
+            OnRolling();
+            OnCutting();
+            OnDig();
+            OnWatering();
+        }
     }
 
     private void FixedUpdate()
     {
-        OnMove();
+        if(!isPaused)
+        {
+            OnMove();
+        }
     }
 
     #region Movement
