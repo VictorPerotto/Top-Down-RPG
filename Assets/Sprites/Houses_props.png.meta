@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,7 +103,448 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Houses_props_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 344
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdafc695b7dce8c439200f0cae0798d9
+      internalID: 1439754545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_1
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 296
+        width: 88
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64c2f3114d68c1499db395b572c2aad
+      internalID: 871896310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_2
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 280
+        width: 44
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb835d357e265540b86758e4b340290
+      internalID: 734100414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_3
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 277
+        width: 80
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1b4553120b95947b2333a1b8357c85
+      internalID: -2131009665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_4
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 277
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bf63cd2bcf22e5479f3b787a903290e
+      internalID: -1989252034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_5
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 248
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3feb57a2caa392a49ab6232a58a30f04
+      internalID: -299598437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_6
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 248
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50af7e8614a7cd64bb9fed7f4f8f3905
+      internalID: 365422475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_7
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 216
+        width: 44
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43cfd9ae4bd1ebb498d0566820d122ad
+      internalID: 1811746567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_8
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 215
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a320e0534d56848b4f9a0777a641ae
+      internalID: -948054784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_9
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 216
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb52bf8456619c342b72a3b8d42cf8a2
+      internalID: -1181490511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_10
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 216
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c566733d9eded8140a90a58789dd8d20
+      internalID: 15883061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_11
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 213
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538761aacd5e83647bdbf56e1e5292a5
+      internalID: 1066862279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_12
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 198
+        width: 48
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12415fb085734fa46a0b941d6589edd4
+      internalID: 68982333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_13
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 152
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3304c4ac8bdb9704382da0c69744cb4d
+      internalID: 1089465881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_14
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 117
+        width: 80
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fae2f383ebb83da4d879529331dee9e1
+      internalID: -381263177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_15
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 72
+        width: 60
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28fe0eaf949a4d2488c235294133ea40
+      internalID: -1048146137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_16
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 62
+        width: 30
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5214b29ae31175d40bd807d0a070f41c
+      internalID: -493162483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_17
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eefd2f2be215d147b19e22172a5f4f6
+      internalID: 1751539013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_18
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 85
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da82ababcff97745a056fe25e5ff893
+      internalID: 1104181057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_19
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 40
+        width: 44
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64da5e66a7387f74c9f36b013109a04c
+      internalID: 522439563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_20
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 238
+        width: 30
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b1f3108e7515ab42aaecaae3e246967
+      internalID: 1242974567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +555,28 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Houses_props_11: 1066862279
+      Houses_props_10: 15883061
+      Houses_props_20: 361488488
+      Houses_props_8: -948054784
+      Houses_props_6: 365422475
+      Houses_props_16: -493162483
+      Houses_props_5: -299598437
+      Houses_props_17: 1751539013
+      Houses_props_2: 734100414
+      Houses_props_9: -1181490511
+      Houses_props_13: 1089465881
+      Houses_props_1: 871896310
+      Houses_props_7: 1811746567
+      Houses_props_4: -1989252034
+      Houses_props_12: 68982333
+      Houses_props_15: -1048146137
+      Houses_props_18: 1104181057
+      Houses_props_14: -381263177
+      Houses_props_19: 522439563
+      Houses_props_0: 1439754545
+      Houses_props_3: -2131009665
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
