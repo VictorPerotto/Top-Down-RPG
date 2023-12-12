@@ -4,35 +4,41 @@ using UnityEngine;
 
 public class House : MonoBehaviour
 {
-    [SerializeField] private Transform playerPoint;
-    [SerializeField] private SpriteRenderer houseSprite;
+    [Header("Settings")]
+    [SerializeField] private int woodAmount;
     [SerializeField] private Color startColor;
     [SerializeField] private Color finishedColor;
     [SerializeField] private float timeToBuild;
-    [SerializeField] private GameObject houseCollider;
 
+    [Header("Components")]
+    [SerializeField] private GameObject houseCollider;
+    [SerializeField] private Transform playerPoint;
+    [SerializeField] private SpriteRenderer houseSprite;
 
     private bool detectingPlayer;
     private float timeCount;
     private bool started;
     private Player player;
     private PlayerAnim playerAnim;
+    private PlayerInventory playerInventory;
 
     void Start()
     {
         player = FindObjectOfType<Player>();
         playerAnim = player.GetComponent<PlayerAnim>();
+        playerInventory = player.GetComponent<PlayerInventory>();
     }
 
     void Update()
     {
-        if(detectingPlayer && Input.GetKeyDown(KeyCode.E))
+        if(detectingPlayer && Input.GetKeyDown(KeyCode.E) && playerInventory.CurrentWoods >= woodAmount)
         {
             started = true;
             playerAnim.OnHammeringStarted();
             houseSprite.color = startColor;
             player.transform.position = playerPoint.position;
             player.IsPaused = true;
+            playerInventory.CurrentWoods -= woodAmount;
         }
 
         if(started)
@@ -64,6 +70,4 @@ public class House : MonoBehaviour
             detectingPlayer = false;
         }
     }
-
-    
 }

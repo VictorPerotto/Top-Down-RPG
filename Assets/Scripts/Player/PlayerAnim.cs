@@ -6,9 +6,18 @@ using UnityEngine;
 
 public class PlayerAnim : MonoBehaviour
 {
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float radius;
+    [SerializeField] private LayerMask enemyLayer;
+
     private Player player;
     private Animator anim;
     private Casting cast;
+
+    private bool isHitting;
+
+    [SerializeField] private float recoveryTime;
+    private float timeCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +31,18 @@ public class PlayerAnim : MonoBehaviour
     void Update()
     {
         OnMove();
+
+        if(isHitting)
+        {   
+            if(timeCount >= recoveryTime)
+            {
+                isHitting = false;
+                timeCount = 0;
+            }
+
+            timeCount += Time.deltaTime;
+        }
+        
     }
 
     #region Movement
@@ -99,5 +120,29 @@ public class PlayerAnim : MonoBehaviour
         anim.SetBool("hammering", false);
     }
 
+    public void OnHit()
+    {
+        if(!isHitting)
+        {
+            anim.SetTrigger("hit");
+            isHitting = true;
+        }
+    }
+
     #endregion
+
+    public void Attack()
+    {
+        Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, radius, enemyLayer);
+
+        if(hit)
+        {
+            Debug.Log("TOMA");
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(attackPoint.position, radius);
+    }
 }
